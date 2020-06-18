@@ -1,0 +1,60 @@
+{%extends 'core/base/base.html' %}
+{%block content %}
+<!-- ================ contact section start ================= -->
+<section class="contact-section">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <h2 class="contact-title">¡Habla con nosotros!</h2>
+
+            </div>
+            <div class="col-lg-8">
+                <form method="POST" >
+                    {%csrf_token%}
+                    {{form.as_p}}
+                    <div class="form-group mt-3">
+                        <button type="submit" class="button button-contactForm boxed-btn">Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-3 offset-lg-1">
+                <div class="media contact-info">
+                    <span class="contact-info__icon"><i class="ti-home"></i></span>
+                    <div class="media-body">
+                        <h3>Star Glass</h3>
+                        <p>Cra 49B #93-58 Aranjuez</p>
+                    </div>
+                </div>
+                <div class="media contact-info">
+                    <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                    <div class="media-body">
+                        <h3>313 534 76 12</h3>
+                        <p>Lunes a sabados 9am a 6pm</p>
+                         <h3>321 858 01 96</h3>
+                        <p>Lunes a sabados 9am a 6pm</p>
+                    </div>
+                </div>
+                <div class="media contact-info">
+                    <span class="contact-info__icon"><i class="ti-email"></i></span>
+                    <div class="media-body">
+                        <h3>Soporte@starglass.com.co</h3>
+                        <p>Envianos tu consulta en cualquier momento!</p>
+                    </div>
+                </div>
+            </div>
+<!--            <div class="d-none d-sm-block mb-5 pb-4">-->
+<!--                <div id="map" style="height: 480px; position: relative; overflow: hidden;">-->
+<!--                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.86475385920107!2d-75.55726061683379!3d6.285269317703372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428cc0c255b17%3A0x4fafcfedfbfad0cd!2sCra.%2049b%20%2393-58%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1591647916238!5m2!1ses!2sco"-->
+<!--                            width="1080" height="480" frameborder="0" style="border:0;"-->
+<!--                            allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
+<!--                </div>-->
+
+<!--            </div>-->
+        </div>
+    </div>
+</section>
+<!-- ================ contact section end ================= -->
+
+</body>
+{%endblock%}

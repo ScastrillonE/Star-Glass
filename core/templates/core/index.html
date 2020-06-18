@@ -1,0 +1,290 @@
+{%extends 'core/base/base.html' %}
+{%load static%}
+{%block meta_css%}
+<link rel="stylesheet" href="{% static 'css/pop-up.css' %}" xmlns:http="http://www.w3.org/1999/xhtml"
+      xmlns:http="http://www.w3.org/1999/xhtml">
+{%endblock%}
+{%block content%}
+<!-- slider Area Start-->
+<div class="slider-area ">
+    <div class="slider-active">
+        <div class="single-slider  hero-overly slider-height d-flex align-items-center"
+             data-background="{% static 'img/hero/hero1.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-11">
+                        <div class="hero__caption">
+                            <div class="hero-text1">
+                                <!--                                        <span data-animation="fadeInUp" data-delay=".3s">hand car wash and detailing service</span>-->
+                            </div>
+                            <h1 data-animation="fadeInUp" data-delay=".5s">Vitrinas y Vidrios</h1>
+                            <br>
+                            <div class="stock-text" data-animation="fadeInUp" data-delay=".8s">
+                                <h2>Star Glass</h2>
+                                <h2>Star Glass</h2>
+                            </div>
+                            <div class="hero-text2 mt-110" data-animation="fadeInUp" data-delay=".9s">
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--        <div class="single-slider  hero-overly slider-height d-flex align-items-center"-->
+        <!--             data-background="{% static 'img/hero/hero1.jpg' %}">-->
+
+        <!--        </div>-->
+    </div>
+</div>
+<!-- slider Area End-->
+<!-- Services Area Start -->
+<div id="services" class="services-area1 section-padding30">
+    <div class="container">
+        <!-- section tittle -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-tittle mb-55">
+                    <div class="front-text">
+                        <h2 class="">Servicios</h2>
+                    </div>
+                    <span class="back-text">Servicios</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {%if services %}
+            {% for service in services %}
+            <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="single-service-cap mb-30">
+                    <div class="service-img">
+                        <img src="{{service.image.url}}" alt="">
+                    </div>
+                    <div class="service-cap">
+                        <h4><a href="{% url 'service_detail' service.pk %}" >{{service.title}}</a></h4>
+                        <!--                                <a href="services_details.html" class="more-btn">Read More <i class="ti-plus"></i></a>-->
+                    </div>
+
+                </div>
+            </div>
+            {%endfor%}
+            {%endif%}
+        </div>
+    </div>
+</div>
+<!-- Services Area End -->
+<!-- About Area Start -->
+<section class="support-company-area fix pt-10">
+    <div class="support-wrapper align-items-end">
+        <div class="left-content">
+            <!-- section tittle -->
+            <div class="section-tittle section-tittle2 mb-55">
+                <div class="front-text">
+                    <h2 class="">Sobre Nosotros</h2>
+                </div>
+                <span class="back-text">Sobre Nosotros</span>
+            </div>
+            <div class="support-caption">
+                <p>Somos una empresa fabricantes de todo lo relacionado con
+                    vidrio crudo, templado, aluminio y acero, siempre
+                    ofreciendo la mejor calidad en nuestros servicios
+                    satisfaciendo las necesidades de nuestros clientes y
+                    buscando el continuo mejoramiento de nuestra empresa</p>
+                <a href="{% url 'about' %}" class="btn red-btn2">Leer más</a>
+            </div>
+        </div>
+        <div class="right-content">
+            <!-- img -->
+            <div class="right-img">
+                <img src="{% static 'img/gallery/logo.png' %}" alt="">
+            </div>
+            <div class="support-img-cap text-center">
+                <p>Desde</p>
+                <span>2017</span>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Area End -->
+<!-- Project Area Start -->
+<section class="project-area  section-padding30">
+    <div class="container">
+        <div class="project-heading mb-35">
+            <div class="row align-items-end">
+                <div class="col-lg-6">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle section-tittle3">
+                        <div class="front-text">
+                            <h2 class="">Proyectos</h2>
+                        </div>
+                        <span class="back-text">Proyectos</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="properties__button">
+                        <!--Nav Button  -->
+                        <!--                                <nav>-->
+                        <!--                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">-->
+                        <!--                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false"> Show  all </a>-->
+                        <!--                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"> Intorior</a>-->
+                        <!--                                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Recent</a>-->
+                        <!--                                        <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#nav-last" role="tab" aria-controls="nav-contact" aria-selected="false">Big building</a>-->
+                        <!--                                        <a class="nav-item nav-link" id="nav-technology" data-toggle="tab" href="#nav-techno" role="tab" aria-controls="nav-contact" aria-selected="false">Park</a>-->
+                        <!--                                    </div>-->
+                        <!--                                </nav>-->
+                        <!--End Nav Button  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- Nav Card -->
+                <div class="tab-content active" id="nav-tabContent">
+                    <!-- card ONE -->
+                    <div class="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="project-caption">
+                            <div class="row">
+                                {% if projects %}
+                                {%for project in projects %}
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="single-project mb-30">
+                                        <div class="project-img">
+                                            <img src="{{project.image.url}}" alt="">
+                                        </div>
+                                        <div class="project-cap">
+                                            <!--                                                    <a href="project_details.html" class="plus-btn"><i class="ti-plus"></i></a>-->
+                                            <h4><a href="">{{project.title}}</a></h4>
+                                            <!--                                                <h4><a href="">{{project.service}}</a></h4>-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                {%endfor%}
+                                {%endif%}
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Nav Card -->
+                </div>
+            </div>
+        </div>
+</section>
+<!-- Project Area End -->
+
+<!-- Testimonial Start -->
+<div class="testimonial-area t-bg testimonial-padding" style="background-color:#022742">
+    <div class="container ">
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Section Tittle -->
+                <div class="section-tittle section-tittle6 mb-50">
+                    <div class="front-text">
+                        <h2 class="">Testimonios</h2>
+                    </div>
+                    <span class="back-text">Testimonios</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-10 col-lg-11 col-md-10 offset-xl-1">
+                <div class="h1-testimonial-active">
+                    <!-- Single Testimonial -->
+                    {%for testimonio in testimonials %}
+                    <div class="single-testimonial">
+                        <!-- Testimonial Content -->
+                        <div class="testimonial-caption ">
+                            <div class="testimonial-top-cap">
+                                <!-- SVG icon -->
+
+                                <p>{{testimonio.content}}</p>
+                            </div>
+                            <!-- founder -->
+                            <div class="testimonial-founder d-flex align-items-center">
+                                <div class="founder-text">
+                                    <span>{{testimonio.name}}</span>
+                                    <p>{{testimonio.pisition}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                    <!--                            testimonio2-->
+                    <div class="single-testimonial">
+                        <!-- Testimonial Content -->
+                        <div class="testimonial-caption ">
+                            <div class="testimonial-top-cap">
+                                <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore
+                                    eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg
+                                    dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim. Mollit anim
+                                    laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife
+                                    nrulla parihatur. Excghcepteur sfwsignjn.</p>
+                            </div>
+                            <!-- founder -->
+                            <div class="testimonial-founder d-flex align-items-center">
+                                <div class="founder-text">
+                                    <span>Jessya Inn</span>
+                                    <p>Co Founder</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+{% if modal %}
+<!--Modal area-->
+<div id="ex1" class="modal">
+    <div class="party">
+        <div class="blur-here"></div>
+        <div class="party__box">
+            <div class="party__box-header" style="background-image: url('http://s2.favim.com/orig/140609/colorful-party-people-tumblr-Favim.com-1827292.png');">
+                <div class="party__text">Aprovecha nuestra promocion!</div>
+            </div>
+            <div class="party__box-info">
+                <h2 class="heading-secondary">
+                    <span class="party__offer">50% descuento en nuestros servicios</span>
+
+                    <span class="party--text">No te la pierdas!!</span>
+                </h2>
+                <a href="{% url 'contact' %}" class="info--btn">Contactanos ahora!</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+{%endif%}
+<!-- Link to open the modal -->
+
+<a href="#ex1" rel="modal:open" id="b_modal"></a>
+{%endblock%}
+
+{%block content_js%}
+
+<script>
+$(document).ready(function(){
+
+    {% if modal %}
+        setTimeout(function(){
+            $("#b_modal").click();
+            var p = $('.close-modal');
+            var c = p.children();
+            p.text('X');
+
+        },7000);
+
+
+    {%endif%}
+    
+});
+
+
+</script>
+
+{%endblock%}
