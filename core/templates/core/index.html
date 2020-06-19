@@ -95,7 +95,7 @@
         </div>
         <div class="right-content">
             <!-- img -->
-            <div class="right-img">
+            <div class="mx-auto right-img">
                 <img src="{% static 'img/gallery/logo.png' %}" alt="">
             </div>
             <div class="support-img-cap text-center">
@@ -205,32 +205,13 @@
                             <div class="testimonial-founder d-flex align-items-center">
                                 <div class="founder-text">
                                     <span>{{testimonio.name}}</span>
-                                    <p>{{testimonio.pisition}}</p>
+                                    <p>{{testimonio.position}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     {%endfor%}
-                    <!--                            testimonio2-->
-                    <div class="single-testimonial">
-                        <!-- Testimonial Content -->
-                        <div class="testimonial-caption ">
-                            <div class="testimonial-top-cap">
-                                <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore
-                                    eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg
-                                    dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim. Mollit anim
-                                    laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife
-                                    nrulla parihatur. Excghcepteur sfwsignjn.</p>
-                            </div>
-                            <!-- founder -->
-                            <div class="testimonial-founder d-flex align-items-center">
-                                <div class="founder-text">
-                                    <span>Jessya Inn</span>
-                                    <p>Co Founder</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -240,7 +221,7 @@
 
 {% if modal %}
 <!--Modal area-->
-<div id="ex1" class="modal">
+<div id="ex1" class="modal col-xs-3">
     <div class="party">
         <div class="blur-here"></div>
         <div class="party__box">
