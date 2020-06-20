@@ -61,7 +61,7 @@
                         <img src="{{service.image.url}}" alt="">
                     </div>
                     <div class="service-cap">
-                        <h4><a href="{% url 'service_detail' service.pk %}" >{{service.title}}</a></h4>
+                        <h4><a href="{% url 'service_detail' service.pk %}">{{service.title}}</a></h4>
                         <!--                                <a href="services_details.html" class="more-btn">Read More <i class="ti-plus"></i></a>-->
                     </div>
 
@@ -211,7 +211,6 @@
                         </div>
                     </div>
                     {%endfor%}
-
                 </div>
             </div>
         </div>
@@ -225,7 +224,8 @@
     <div class="party">
         <div class="blur-here"></div>
         <div class="party__box">
-            <div class="party__box-header" style="background-image: url('http://s2.favim.com/orig/140609/colorful-party-people-tumblr-Favim.com-1827292.png');">
+            <div class="party__box-header"
+                 style="background-image: url('http://s2.favim.com/orig/140609/colorful-party-people-tumblr-Favim.com-1827292.png');">
                 <div class="party__text">Aprovecha nuestra promocion!</div>
             </div>
             <div class="party__box-info">
@@ -260,10 +260,14 @@ $(document).ready(function(){
 
         },7000);
 
-
     {%endif%}
+
+
     
 });
+
+
+
 
 
 </script>

@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, TemplateView, DetailView
 from django.template.loader import  render_to_string
 from django.core.mail import EmailMessage
@@ -37,30 +37,29 @@ class ContactView(TemplateView):
         correo = request.POST.get('email')
         asunto = request.POST.get('subject')
         mensaje = request.POST.get('message')
+        try:
+            body= render_to_string('core/email_content.html', {
+                'name':nombre,
+                'email':correo,
+                'subject':asunto,
+                'message':mensaje,
 
-        body= render_to_string('core/email_content.html', {
-            'name':nombre,
-            'email':correo,
-            'subject':asunto,
-            'message':mensaje,
+            },)
 
-        },)
+            email_message=EmailMessage(
+                subject='Mensaje star glass ' + asunto,
+                body=body,
+                from_email=correo,
+                to=['contacta@starglass.com.co'],
+            )
+            email_message.content_subtype='html'
+            email_message.send()
+            print('Enviado con exito')
 
-        email_message=EmailMessage(
-            subject='Mensaje star glass ' + asunto,
-            body=body,
-            from_email=correo,
-            to=['santiagocastrillon.ep@gmail.com'],
-        )
-        email_message.content_subtype='html'
-        email_message.send()
-        if email_message.send:
-            print('Mensaje enviado correctamente')
-        else:
-            print('Algo fallo')
-        print(nombre,correo,asunto,mensaje)
-        
-        return redirect('index')
+        except:
+            return redirect(reverse('contact')+ "?fail")
+
+        return redirect(reverse('contact')+"?ok")
 
 class AboutView(TemplateView):
     template_name = 'core/about.html'
