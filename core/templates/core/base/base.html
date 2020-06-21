@@ -25,8 +25,6 @@
     <link rel="stylesheet" href="{% static 'css/extra.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
-<!--    AOS-->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170070365-1"></script>
     <script>
@@ -35,6 +33,7 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-170070365-1');
+
 
     </script>
 
@@ -102,10 +101,10 @@
     <!-- Header End -->
 </header>
 <main>
-    {%block content%}
 
-    {%endblock content%}
-    <!--Buttons social-->
+    {%block content%}
+    {%endblock%}
+ <!--Buttons social-->
     <!--    Whatsapp-->
     <a href="https://api.whatsapp.com/send?phone=573135347612&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n."
        class="float float-whatsapp" target="_blank">
@@ -163,7 +162,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-12 ">
                         <div class="footer-copy-right">
-                            <p>© Desarrollado e implementado por <a href="https://github.com/ScastrillonE"
+                            <p style="font-size:20px; padding-left:30px;">© Desarrollado e implementado por <a href="https://github.com/ScastrillonE"
                                                                     target="_blank">ScastrillonE</a></p>
                         </div>
                     </div>
@@ -174,6 +173,7 @@
     </div>
 
     <!-- Footer End-->
+
 </footer>
 
 <!-- JS here -->
@@ -220,12 +220,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <!--jqueryconfirm-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
-<!--AOS-->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<script>
-    AOS.init();
-</script>
 {% block content_js %}
 {%endblock%}
 

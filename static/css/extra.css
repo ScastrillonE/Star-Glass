@@ -1,4 +1,7 @@
-@media only screen and (min-width: 350px) and (max-width: 600px){
+.close-modal{
+    display:none;
+}
+@media only screen and (min-width: 350px) and (max-width: 560px){
    .support-company-area .support-wrapper .right-content .right-img img{
         max-width:70%;
         position:relative;
