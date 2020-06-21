@@ -26,14 +26,14 @@
                             <div class="row">
                                 {% if projects %}
                                 {%for project in projects %}
-                                <div class="col-lg-4 col-md-6">
+                                <div class="col-lg-4 col-md-6" data-aos="fade-up">
                                     <div class="single-project mb-30">
                                         <div class="project-img">
                                             <img src="{{project.image.url}}" alt="">
                                         </div>
                                         <div class="project-cap">
                                             <!--                                                    <a href="project_details.html" class="plus-btn"><i class="ti-plus"></i></a>-->
-                                            <h4><a href="">{{project.title}}</a></h4>
+                                            <h4><a>{{project.title}}</a></h4>
                                             <!--                                                <h4><a href="">{{project.service}}</a></h4>-->
 
                                         </div>

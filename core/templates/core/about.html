@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <!-- About Area Start -->
-<section class="support-company-area fix pt-10 section-padding30">
+<section class="support-company-area fix pt-10 section-padding30" data-aos="fade-left">
     <div class="support-wrapper align-items-end">
         <div class="left-content">
             <!-- section tittle -->
@@ -24,7 +24,7 @@
         <div class="right-content">
             <!-- img -->
             <div class="right-img">
-                <img src="{% static 'img/gallery/safe_in.png' %}" alt="">
+                <img src="{% static 'img/gallery/logo.png' %}" alt="">
             </div>
             <div class="support-img-cap text-center">
                 <p>Desde</p>
@@ -35,13 +35,13 @@
     </div>
 </section>
 <!--        Mision y vision-->
-<section class="support-company-area fix pt-10 section-padding30">
+<section class="support-company-area fix pt-10 section-padding30" data-aos="fade-right">
     <div class="support-wrapper align-items-end">
         <div class="left-content">
             <!-- section tittle -->
             <!-- img -->
             <div class="left-img">
-                <img style="width:100%;" src="{% static 'img/gallery/safe_in.png' %}" alt="">
+                <img style="width:100%;" src="{% static 'img/gallery/img1.png' %}" alt="">
             </div>
         </div>
         <div class="right-content">
@@ -54,7 +54,7 @@
                     <span class="back-text">Nuestra Misión</span>
                     <div class="support-caption">
                         <p class="pera-top"></p>
-                        <p>Satisfacer las necesidades de nuestros clientes
+                        <p class="description">Satisfacer las necesidades de nuestros clientes
                             brindando un servicio en el que predomine el conocimiento
                             de sus necesidades, para así poder acompañarlos en la
                             realización de sus proyectos, ofreciéndoles un servicio
@@ -64,34 +64,34 @@
                 </div>
             </div>
         </div>
-        <!--                Visión-->
-        <section class="support-company-area fix pt-10 section-padding30">
-            <div class="support-wrapper align-items-end">
-                <div class="left-content">
-                    <!-- section tittle -->
-                    <div class="section-tittle section-tittle2 mb-55">
-                        <div class="front-text">
-                            <h2 class="">Nuestra Visión</h2>
-                        </div>
-                        <span class="back-text">Nuestra Visión</span>
-                    </div>
-                    <div class="support-caption">
-                        <p class="pera-top"></p>
-                        <p>Ser una empresa reconocida en el sector por
-                            nuestro buen servicio de calidad y buen trato
-                            hacia nuestros clientes, cumpliendo así con todas
-                            las expectativas</p>
-                    </div>
-                </div>
-                <div class="right-content">
-                    <!-- img -->
-                    <div class="right-img">
-                        <img src="{% static 'img/gallery/safe_in.png' %}" alt="">
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 </section>
-<!-- About Area End -->
-{% endblock %}
+    <!--                Visión-->
+    <section class="support-company-area fix pt-10 section-padding30" data-aos="fade-left">
+        <div class="support-wrapper align-items-end">
+            <div class="left-content">
+                <!-- section tittle -->
+                <div class="section-tittle section-tittle2 mb-55">
+                    <div class="front-text">
+                        <h2 class="">Nuestra Visión</h2>
+                    </div>
+                    <span class="back-text">Nuestra Visión</span>
+                </div>
+                <div class="support-caption">
+                    <p class="pera-top"></p>
+                    <p class="description">Ser una empresa reconocida en el sector por nuestro buen servicio
+                        de calidad y buen trato hacia nuestros clientes, cumpliendo así con
+                        todas las expectativas</p>
+                </div>
+            </div>
+            <div class="right-content">
+                <!-- img -->
+                <div class="right-img">
+                    <img src="{% static 'img/gallery/img2.png' %}" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- About Area End -->
+    {% endblock %}

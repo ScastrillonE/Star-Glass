@@ -55,10 +55,10 @@
         <div class="row">
             {%if services %}
             {% for service in services %}
-            <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up-right">
                 <div class="single-service-cap mb-30">
                     <div class="service-img">
-                        <img src="{{service.image.url}}" alt="">
+                        <a href="{% url 'service_detail' service.pk %}"><img src="{{service.image.url}}" alt=""></a>
                     </div>
                     <div class="service-cap">
                         <h4><a href="{% url 'service_detail' service.pk %}">{{service.title}}</a></h4>
@@ -68,13 +68,15 @@
                 </div>
             </div>
             {%endfor%}
-            {%endif%}
         </div>
+        <a href="{% url 'services' %}" class="btn btn-lg btn-block red-btn2">Ver todos nuestros servicios</a>
+
+        {%endif%}
     </div>
 </div>
 <!-- Services Area End -->
 <!-- About Area Start -->
-<section class="support-company-area fix pt-10">
+<section class="support-company-area fix pt-10" data-aos="flip-up">
     <div class="support-wrapper align-items-end">
         <div class="left-content">
             <!-- section tittle -->
@@ -148,14 +150,14 @@
                             <div class="row">
                                 {% if projects %}
                                 {%for project in projects %}
-                                <div class="col-lg-4 col-md-6">
+                                <div class="col-lg-4 col-md-6" data-aos="fade-up-left">
                                     <div class="single-project mb-30">
                                         <div class="project-img">
                                             <img src="{{project.image.url}}" alt="">
                                         </div>
                                         <div class="project-cap">
                                             <!--                                                    <a href="project_details.html" class="plus-btn"><i class="ti-plus"></i></a>-->
-                                            <h4><a href="">{{project.title}}</a></h4>
+                                            <h4><a>{{project.title}}</a></h4>
                                             <!--                                                <h4><a href="">{{project.service}}</a></h4>-->
 
                                         </div>
@@ -175,7 +177,7 @@
 <!-- Project Area End -->
 
 <!-- Testimonial Start -->
-<div class="testimonial-area t-bg testimonial-padding" style="background-color:#022742">
+<div class="testimonial-area t-bg testimonial-padding" data-aos="fade-right" style="background-color:#022742">
     <div class="container ">
         <div class="row">
             <div class="col-xl-12">
@@ -226,13 +228,13 @@
         <div class="party__box">
             <div class="party__box-header"
                  style="background-image: url('http://s2.favim.com/orig/140609/colorful-party-people-tumblr-Favim.com-1827292.png');">
-                <div class="party__text">Aprovecha nuestra promocion!</div>
+                <div class="party__text">{{modal.title}}</div>
             </div>
             <div class="party__box-info">
                 <h2 class="heading-secondary">
-                    <span class="party__offer">50% descuento en nuestros servicios</span>
+                    <span class="party__offer">{{modal.content}}</span>
 
-                    <span class="party--text">No te la pierdas!!</span>
+                    <span class="party--text">{{modal.content2}}</span>
                 </h2>
                 <a href="{% url 'contact' %}" class="info--btn">Contactanos ahora!</a>
             </div>
@@ -265,6 +267,10 @@ $(document).ready(function(){
 
     
 });
+
+
+
+
 
 
 

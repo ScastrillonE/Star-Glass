@@ -2,8 +2,10 @@ from django.db import models
 import PIL
 from PIL import Image
 
+
 def serviceImageName(title):
     return 'service {}'.format(title)
+
 
 # Create your models here.
 class BaseModel(models.Model):
@@ -11,12 +13,12 @@ class BaseModel(models.Model):
     modified = models.DateTimeField(auto_now=True)
     status = models.BooleanField('activado/desactivado', default=True)
 
-
     class Meta:
-        abstract= True
+        abstract = True
+
 
 class Service(BaseModel):
-    title=models.CharField(max_length=300, verbose_name='Titulo del servicio')
+    title = models.CharField(max_length=300, verbose_name='Titulo del servicio')
     image = models.ImageField(upload_to='services')
 
     class Meta():
@@ -24,14 +26,13 @@ class Service(BaseModel):
         verbose_name_plural = 'Servicios'
 
     def __str__(self):
-       return self.title
+        return self.title
 
     def save(self):
         super(Service, self).save()
         image = Image.open(self.image)
-        image = image.resize((370,246), Image.ANTIALIAS)
+        image = image.resize((370, 246), Image.ANTIALIAS)
         image.save(self.image.path)
-
 
 
 class Project(BaseModel):
@@ -50,8 +51,9 @@ class Project(BaseModel):
     def save(self):
         super(Project, self).save()
         image = Image.open(self.image)
-        image = image.resize((370,246), Image.ANTIALIAS)
+        image = image.resize((370, 246), Image.ANTIALIAS)
         image.save(self.image.path)
+
 
 class Testimonial(BaseModel):
     name = models.CharField(max_length=100, verbose_name='Nombre')
@@ -65,5 +67,11 @@ class Testimonial(BaseModel):
     def __str__(self):
         return '{} -- {}'.format(self.name, self.content)
 
+
 class PopUp(BaseModel):
+    title = models.CharField(max_length=250, null=True)
     content = models.TextField()
+    content2 = models.CharField(max_length=20,null=True,blank=True)
+
+    def __str__(self):
+        return self.title

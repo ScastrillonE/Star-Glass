@@ -4,7 +4,7 @@ from django.views.generic import ListView, TemplateView, DetailView
 from django.template.loader import  render_to_string
 from django.core.mail import EmailMessage
 
-from .models import Project, Service, Testimonial
+from .models import Project, Service, Testimonial,PopUp
 from .forms import ContactForm
 
 
@@ -12,13 +12,13 @@ from .forms import ContactForm
 class IndexView(ListView):
     template_name = 'core/index.html'
     model = Project
-    paginate_by = 10
+    paginate_by = 6
 
     def get_context_data(self,**kwargs):
         context = super().get_context_data(**kwargs)
         context['projects'] = Project.objects.filter(status=True)
         context['services'] = Service.objects.filter(status=True)
-        context['modal'] = 'modal'
+        context['modal'] = PopUp.objects.all().last()
         context['testimonials'] = Testimonial.objects.all()
 
         return context
@@ -68,6 +68,7 @@ class ServiceList(ListView):
     template_name = 'core/services.html'
     model = Service
     context_object_name = 'services'
+    paginate_by = 20
 
 
 
